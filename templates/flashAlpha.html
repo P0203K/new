@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shuffled Image Flashcards</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.png">
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/css/uikit.min.css"> 
+	<link rel="stylesheet" type="text/css" href="static/css/fontawesome/css/all.css">
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+  
+    .flashcard {
+      height: 400px; /* Increased height for the flashcards */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+      cursor: pointer;
+    }
+  
+    .flashcard:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .flashcard img {
+      width: 100%;
+      height: 100%; /* Adjusted to take the full height of the flashcard */
+      object-fit: cover;
+    }
+  
+    .flashcard .back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      height: 50%; /* Increased height of the back element */
+      background-color: #f7f7f7;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: opacity 0.3s ease; /* Added opacity transition */
+      opacity: 0; /* Initially hidden */
+    }
+  
+    .flashcard:hover .back {
+      opacity: 1; /* Show the back on hover */
+    }
+  
+    .flashcard p {
+      margin: 0;
+      font-size: 36px; /* Increased font size for better visibility */
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+  <title>Signova</title>
+</head>
+<body>
+     <!-- Navbar Section Start -->
+     <nav class="navbar navbar-dark navbar-expand-lg" uk-sticky="top:100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="static/img/logo1.png" class="img-fluid p-0" style="width: 35%; filter: brightness(0) invert(1);">
+                <div class="ml-2 p-0 d-inline webT">Signova</div>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navBar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="navbar-nav  ml-auto ">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/translator">Translator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quiz">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/learner">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- Cards Container using Bootstrap grid -->
+<div class="container">
+<h2 class="text-center mb-4">Alphabets</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="flashcard">
+        <img src="static/alphabet/A/A.jpg" alt="Image A">
+        <div class="back">
+          <p>A</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/B/B.jpg" alt="Image B">
+          <div class="back">
+            <p>B</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/C/C.jpg" alt="Image C">
+          <div class="back">
+            <p>C</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/D/D.jpg" alt="Image D">
+          <div class="back">
+            <p>D</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/E/E.jpg" alt="Image E">
+          <div class="back">
+            <p>E</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/F/F.jpg" alt="Image F">
+          <div class="back">
+            <p>F</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/G/G.jpg" alt="Image G">
+          <div class="back">
+            <p>G</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/H/H.jpg" alt="Image H">
+          <div class="back">
+            <p>H</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/I/I.jpg" alt="Image I">
+          <div class="back">
+            <p>I</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/J/J.jpg" alt="Image J">
+          <div class="back">
+            <p>J</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/K/K.jpg" alt="Image K">
+          <div class="back">
+            <p>K</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/L/L.jpg" alt="Image L">
+          <div class="back">
+            <p>L</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/M/M.jpg" alt="Image M">
+          <div class="back">
+            <p>M</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/N/N.jpg" alt="Image N">
+          <div class="back">
+            <p>N</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/O/O.jpg" alt="Image O">
+          <div class="back">
+            <p>O</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/P/P.jpg" alt="Image P">
+          <div class="back">
+            <p>P</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/Q/Q.jpg" alt="Image Q">
+          <div class="back">
+            <p>Q</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/R/R.jpg" alt="Image R">
+          <div class="back">
+            <p>R</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/S/S.jpg" alt="Image S">
+          <div class="back">
+            <p>S</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/T/T.jpg" alt="Image T">
+          <div class="back">
+            <p>T</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/U/U.jpg" alt="Image U">
+          <div class="back">
+            <p>U</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/V/V.jpg" alt="Image V">
+          <div class="back">
+            <p>V</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/W/W.jpg" alt="Image W">
+          <div class="back">
+            <p>W</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/X/X.jpg" alt="Image X">
+          <div class="back">
+            <p>X</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/Y/Y.jpg" alt="Image Y">
+          <div class="back">
+            <p>Y</p>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="flashcard">
+          <img src="static/alphabet/Z/Z.jpg" alt="Image Z">
+          <div class="back">
+            <p>Z</p>
+          </div>
+      </div>
+      </div>
+
+    
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+<!-- Footer Section Start -->
+<footer id="footer" class="py-3 text-center text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-5 mb-0 text-light">Signova</h2>
+                <div class="d-flex flex-row justify-content-center p-3">
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="px-5">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,10 @@
+streamlit
+opencv-python
+mediapipe
+tensorflow
+numpy
+google.generativeai
+tensorflow.keras
+flask
+pyttsx3
+pickle5

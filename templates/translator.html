@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="static/img/favicon.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/uikit.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="static/css/fontawesome/css/all.css"
+    />
+    <link rel="stylesheet" href="static/styles.css" />
+    <title>Signova</title>
+  </head>
+  <body>
+    <!-- Navbar Section Start -->
+    <nav
+      class="navbar navbar-dark navbar-expand-lg"
+      uk-sticky="top:100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up"
+    >
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img
+            src="static/img/logo1.png"
+            class="img-fluid p-0"
+            style="width: 35%; filter: brightness(0) invert(1)"
+          />
+          <div class="ml-2 p-0 d-inline webT">Signova</div>
+        </a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          data-toggle="collapse"
+          data-target="#navBar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navBar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/translator">Translator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/quiz">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/learner">Learn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- About Section Start -->
+    <section id="about" class="text-center py-5 text-light">
+      <div class="inner-overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col mt-5 pt-4">
+              <h1 class="text-light">Translator</h1>
+              <p class="lead">Let's translate the signs together</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- OpenCV Video Feed Section Start -->
+    <!-- OpenCV Video Feed Section Start -->
+    <!-- <div class="container mt-5 mb-5">
+        <h1 class="text-center">Sign to Text/Audio</h1>
+        <div class="text-center">
+            <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Video Feed" style="border: 2px solid #ccc;">
+        </div>
+    </div>
+   -->
+    <!-- OpenCV Video Feed Section Start -->
+
+    <!-- <div id="imageGallery" class="image-gallery"> -->
+    <!-- Images will be dynamically added here -->
+    <!-- </div> -->
+
+    <div class="container mt-5 mb-5">
+      <h1 class="text-center">Sign to Text/Audio</h1>
+      <div class="video-feed-container">
+        <div class="video-feed">
+          <img
+            id="video_feed"
+            src="{{ url_for('video_feed') }}"
+            alt="Video Feed"
+            style="border: 2px solid #ccc"
+          />
+        </div>
+        <div class="buttons">
+          <button id="alphabetBtn">Alphabets</button>
+          <!-- <button id="numbersBtn">Numbers</button> -->
+        </div>
+
+        <div id="gridContainer" class="grid-container">
+          <!-- Images, alphabets, and numbers will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for image preview -->
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <img id="modalImg" class="modal-content" src="" alt="" />
+    </div>
+
+    <!-- OpenCV Video Feed Section End -->
+
+    <!-- OpenCV Video Feed Section End
+
+    <!-- Footer Section Start -->
+    <footer id="footer" class="py-3 text-center text-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="display-5 mb-0 text-light">Signova</h2>
+            <div class="d-flex flex-row justify-content-center p-3">
+              <div class="px-5">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+              <div class="px-5">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+              <div class="px-5">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="static/js/jquery-slim.min.js"></script>
+    <script type="text/javascript" src="static/js/popper.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/js/uikit.min.js"></script>
+    <script type="text/javascript" src="static/js/uikit-icons.min.js"></script>
+    <script src="static\js\script.js"></script>
+    <script>
+      window.addEventListener('beforeunload', function () {
+          fetch('/leave_page', { method: 'GET' });
+      });
+      </script>      
+  </body>
+</html>
